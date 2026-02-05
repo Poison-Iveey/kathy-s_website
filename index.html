@@ -13,7 +13,7 @@
     <div class="container reveal">
       <h1 class="hero-title">Catherine Fiona</h1>
       <p class="hero-sub">
-        Acturial Portfolo
+        My Acturial Portfolio
       </p>
     </div>
   </section>
@@ -25,19 +25,6 @@
       Actuarial science graduate with experience in pension administration, data analysis using Excel, Python, and R, and applied research in global analytical reports.
       I'm seeking actuarial analyst and trainee roles in pensions, insurance, and data-driven decision-making
     </p>
-  </section>
-
-  <!-- SKILLS -->
-  <section class="container">
-    <h2 class="section-title reveal">Skills</h2>
-    <div class="skills">
-      <div class="skill-card reveal delay-1">HTML</div>
-      <div class="skill-card reveal delay-2">CSS</div>
-      <div class="skill-card reveal delay-3">JavaScript</div>
-      <div class="skill-card reveal delay-1">Git & GitHub</div>
-      <div class="skill-card reveal delay-2">Webpack</div>
-      <div class="skill-card reveal delay-3">Responsive Design</div>
-    </div>
   </section>
 
   <!-- PROJECTS -->
@@ -59,31 +46,6 @@
       <ul class="project-links">
         <li><a href="https://www.notion.so/Medical-insurance-charges-analysis-2fbec2b9142c80c8ab74df97dd89c464?pvs=25">Medical insurance charges analysis</a></li>
         <li><a href="https://www.notion.so/House-pricing-prediction-using-linear-regression-2fbec2b9142c80ab8006ea4280e6de64?pvs=25">House pricing prediction using linear regression</a></li>
-      </ul>
-      </strong>
-    </div>
-<br>
-    <button class="project-more-btn">More</button>
-  </div>
-</div>
-
-     <div class="project-card reveal delay-3">
-  <div class="project-info">
-    <h3 class="project-title">INDUSTRY WRITING AND THOUGHT SHARING</h3>
-    <h4>Medium insurance content</h4>
-
-    <p class="project-desc">
-      Analytical essays focused on insurance, risk, public policy,
-      and economic systems for non-technical audiences.
-    </p>
-
-    <!-- HIDDEN MODAL CONTENT -->
-    <div class="project-more">
-        <strong>
-      <ul class="project-links">
-        <li><a href="https://www.notion.so/Re-introduction-to-everything-you-already-know-2fbec2b9142c8090a43df77393385d2c?pvs=25">Re-introduction to everything you already know</a></li>
-        <li><a href="https://www.notion.so/How-does-insurance-actually-work-2fbec2b9142c80808dfee604849eff24?pvs=25">How does insurance actually work</a></li>
-        <li><a href="https://www.notion.so/Who-is-an-actuary-2fbec2b9142c80ca9073eb4b70d5d8c6?pvs=25">Who is an actuary</a></li>
       </ul>
       </strong>
     </div>
@@ -129,17 +91,59 @@
     <button class="project-more-btn">More</button>
   </div>
 </div>
+
+<div class="project-card reveal delay-3">
+  <div class="project-info">
+    <h3 class="project-title">INDUSTRY WRITING AND THOUGHT SHARING</h3>
+    <h4>Medium insurance content</h4>
+
+    <p class="project-desc">
+      Analytical essays focused on insurance, risk, public policy,
+      and economic systems for non-technical audiences.
+    </p>
+
+    <!-- HIDDEN MODAL CONTENT -->
+    <div class="project-more">
+        <strong>
+      <ul class="project-links">
+        <li><a href="https://www.notion.so/Re-introduction-to-everything-you-already-know-2fbec2b9142c8090a43df77393385d2c?pvs=25">Re-introduction to everything you already know</a></li>
+        <li><a href="https://www.notion.so/How-does-insurance-actually-work-2fbec2b9142c80808dfee604849eff24?pvs=25">How does insurance actually work</a></li>
+        <li><a href="https://www.notion.so/Who-is-an-actuary-2fbec2b9142c80ca9073eb4b70d5d8c6?pvs=25">Who is an actuary</a></li>
+      </ul>
+      </strong>
+    </div>
+<br>
+    <button class="project-more-btn">More</button>
+  </div>
+</div>
+
+
     </div>
   </section>
 
   <!-- CONTACT -->
+   <!--contact1-->
+  <section class="container">
+    <h2 class="section-title reveal">Reach me</h2>
+    <div class="skills">
+      <div class="skill-card reveal delay-1"><a href="mailto:catherinea650@gmail.com"><strong>Email</strong></a></div>
+      <div class="skill-card reveal delay-2"><a href="https://www.notion.so/Catherine-Fiona-Actuarial-portfolio-2faec2b9142c8007805be6f79a0f03b8"><strong>Notion</strong></a></div>
+      <div class="skill-card reveal delay-3"><a href="https://medium.com/@catherinefiona"><strong>Medium</strong></a></div>
+      <div class="skill-card reveal delay-1"><a href="https://www.linkedin.com/in/catherine-akoth-88b749264"><strong>LinkedIn</strong></a></div>
+      </div>
+  </section>
+
+
+   <!--contact2-->
   <section class="container reveal">
     <h2 class="section-title">Contact</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button class="contact-btn">Send</button>
+    <form class="contact-form" id="contactForm">
+      <input type="text" placeholder="Your Name" name="name" required>
+      <input type="email" placeholder="Your Email" name="email" required>
+      <textarea rows="5" placeholder="Your Message" name="message" required></textarea>
+      <button type="submit" class="contact-btn">Send</button>
+
+      <p id="formStatus" style="display:none; margin-top:10px;"></p>
     </form>
   </section>
 
@@ -153,12 +157,13 @@
 
   <!-- SCROLL REVEAL SCRIPT -->
   <script>
+  
   const reveals = document.querySelectorAll('.reveal');
   const buttons = document.querySelectorAll('.project-more-btn');
-  const modal = document.querySelector('.project-modal-overlay');
+  const modalOverlay = document.querySelector('.project-modal-overlay');
   const modalBody = document.querySelector('.project-modal-body');
   const closeBtn = document.querySelector('.project-modal-close');
-  
+  const modal = document.querySelector('.project-modal');
 
   // Scroll reveal
   const observer = new IntersectionObserver(entries => {
@@ -173,29 +178,74 @@
 
   // Open modal
   buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation(); 
+
       const projectCard = btn.closest('.project-card');
       const moreContent = projectCard.querySelector('.project-more').innerHTML;
 
       modalBody.innerHTML = moreContent;
-      modal.classList.add('active');
+      modalOverlay.classList.add('active');
       document.body.classList.add('modal-open');
     });
   });
 
-  // Close modal
+  // Close modal (X button)
   closeBtn.addEventListener('click', () => {
-    modal.classList.remove('active');
+    modalOverlay.classList.remove('active');
     document.body.classList.remove('modal-open');
   });
 
-  modal.addEventListener('click', e => {
-    if (e.target === modal) {
-      modal.classList.remove('active');
+  // Close modal when clicking overlay only
+  modalOverlay.addEventListener('click', () => {
+    modalOverlay.classList.remove('active');
+    document.body.classList.remove('modal-open');
+  });
+
+  // 🔑 Prevent modal content clicks from closing it
+  modal.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  
+
+  // contact section
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const statusMsg = document.getElementById("formStatus");
+
+  if (!form) {
+    console.error("Contact form not found");
+    return;
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // ⛔ stops page refresh
+
+    const formData = new FormData(form);
+
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbz-zIT0oLyL9bn8-0e_RM9e_Xixd4R_tVyGV876MhZOdm7NKrmnl-kiUttCefznyzeW/exec", {
+        method: "POST",
+        body: formData
+      });
+
+      statusMsg.textContent = "✅ Message sent successfully!";
+      statusMsg.style.display = "block";
+      statusMsg.style.color = "#2ecc71";
+
+      form.reset();
+    } catch (error) {
+      console.error(error);
+      statusMsg.textContent = "❌ Something went wrong. Please try again.";
+      statusMsg.style.display = "block";
+      statusMsg.style.color = "#e74c3c";
     }
   });
+});
+
+
 </script>
-
-
 </body>
 </html>
